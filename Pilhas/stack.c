@@ -5,7 +5,7 @@
 /*Tipo de dado Pilha que possui um vetor de char e um inteiro que define a posição do topo da pilha*/
 typedef struct pilha
 {
-     char elementos[MAX];
+     int elementos[MAX];
      int topo; // posição do topo da pilha
 
 }Pilha;
@@ -53,7 +53,7 @@ bool vazia(Pilha p)
 /* recebe um ponteiro para pilha e um char, verifica se a pilha esta cheia, caso sim retorna false
 caso contrario incrementa o topo da pilha, e insere x na posição topo do vetor elementos e retorna true
 */
-bool empilhar(Pilha *p, char x)
+bool empilhar(Pilha *p, int x)
 {
     bool deuCerto;
     if(cheia(*p) == true)
@@ -72,7 +72,7 @@ bool empilhar(Pilha *p, char x)
 /* recebe um ponteiro para pilha e um ponteiro para char, verifica se a pilha está vazia,
 caso sim retorna false, caso contrario a funçao decrementa o topo da pilha e atribui a *X o valor da posicao
 topo do vetor elementos e retorna true*/
-bool desempilhar(Pilha *p, char *x)
+bool desempilhar(Pilha *p, int *x)
 {
     bool deuCerto;
     if(vazia(*p) == true)
@@ -92,16 +92,16 @@ bool desempilhar(Pilha *p, char *x)
 int main ()
 {
     Pilha stack;
-    char c;
+    int c;
     criarP(&stack);
     for(int i = 0;i < MAX;i++)
     {
-        scanf("%c", &c);
+        scanf("%i", &c);
         empilhar(&stack, c);
     }
     while (desempilhar(&stack, &c) == true)
     {
-        printf("%c ", c);
+        printf("%i ", c);
     }
     return 0;
 }
