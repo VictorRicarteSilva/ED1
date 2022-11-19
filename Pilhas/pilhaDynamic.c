@@ -9,7 +9,7 @@ typedef struct pilha{ // define o tipo de dado Pilha de tamanho MAX
 }Pilha;
 
 void criaP(Pilha *p){ // aloca dinamicamente a Pilha na mémoria
-    p = malloc(MAX * sizeof(Pilha));
+    p = malloc(sizeof(Pilha));
 }
 
 void destroiP(Pilha *p){ // libera a Pilha da mémoria
@@ -71,7 +71,7 @@ int main(){
     Pilha p1;
     int num;
     criaP(&p1);
-    for(int i = 0;i < MAX;i++){
+    while(full(p1) == false){
         scanf("%d", &num);
         push(&p1, num);
     }
