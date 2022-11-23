@@ -22,5 +22,6 @@ int main(){
     for(int i = 0;i < qtd;i++){
         printf("Pontos digitados: (%d,%d)\n", p[i].x, p[i].y);
     }
+    free(p);
     return 0;
 }

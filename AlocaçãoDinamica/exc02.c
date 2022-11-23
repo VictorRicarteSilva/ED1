@@ -29,7 +29,7 @@ int main(){
     scanf("%d", &qtdVet);
     vet = malloc(qtdVet * sizeof(int));
     for(int i = 0;i < qtdVet;i++){
-        printf("%do. inteiro: ", i);
+        printf("%do. inteiro: ", (i+1));
         scanf("%d", &vet[i]);
     }
     printf("Sao pares: %d dos %d inteiros lidos.\n", par(vet, qtdVet), qtdVet);

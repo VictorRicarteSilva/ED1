@@ -43,7 +43,7 @@ bool empty(Pilha *p){ // veridica se a posição no topo e igual a 0
 bool push(Pilha *p, int x){ /* verifica se a Pilha está cheia, caso não incrementa o topo e insere um elemento
                                 na mesma posição*/
     bool deucerto;
-    if(full(&p) == true){
+    if(full(p) == true){
         deucerto = false;
         return deucerto;
     }else{
@@ -57,12 +57,12 @@ bool push(Pilha *p, int x){ /* verifica se a Pilha está cheia, caso não increm
 bool pop(Pilha *p, int *x){ /*verifica se a Pilha está vazia, caso não o ponteiro pra inteiro recebe o elemento
                             do topo e decrementa o topo da Pilha*/
     bool deuCerto;
-    if(empty(&p) == true){
+    if(empty(p) == true){
         deuCerto = false;
         return deuCerto;
     }else{
-        *x = p->elem[p->top];
         p->top = p->top - 1;
+        *x = p->elem[p->top];
         deuCerto = true;
         return deuCerto;
     }
@@ -73,6 +73,7 @@ int main(){
     int num;
     criaP(&p1);
     while(full(&p1) == false){
+        setbuf(stdin,NULL);
         scanf("%d", &num);
         push(&p1, num);
     }
@@ -81,4 +82,5 @@ int main(){
         printf("%i", num);
     }
     destroiP(&p1);
+    return 0;
 }
