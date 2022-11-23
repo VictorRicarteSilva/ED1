@@ -1,2 +1,4 @@
 TAD pilha;
-operações: criar, destruir, empilhar, desempilhar, vazia e cheia;
+operações: criar, destruir, vazia, cheia, inserir, remover;
+TAD fila;
+Operações: criar, destruir, vazia, cheia, inserir, remover;
