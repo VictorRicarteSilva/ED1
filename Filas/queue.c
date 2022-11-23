@@ -49,7 +49,7 @@ bool full(Fila *f){
     }
 }
 
-bool push(Fila *f, char x){
+bool enqueue(Fila *f, char x){
     bool deuCerto;
     if(full(f) == true){
         deuCerto = false;
@@ -67,7 +67,7 @@ bool push(Fila *f, char x){
     }
 }
 
-bool pop(Fila *f, char *x){
+bool dequeue(Fila *f, char *x){
     bool deuCerto;
     if(empty(f) == true){
         deuCerto = false;
@@ -91,10 +91,10 @@ int main(){
      fi = criaF();
     while (full(fi) == false){
         scanf(" %c", &elem);
-        push(fi,elem);
+        enqueue(fi,elem);
     }
     while (empty(fi) == false){
-        pop(fi,&elem);
+        dequeue(fi,&elem);
         printf("o elemento retirado foi: %c\n", elem);
     }
     return 0;

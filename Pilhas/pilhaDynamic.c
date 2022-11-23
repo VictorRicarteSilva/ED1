@@ -8,9 +8,13 @@ typedef struct pilha{ // define o tipo de dado Pilha de tamanho MAX
     int top;
 }Pilha;
 
-void criaP(Pilha *p){ // aloca dinamicamente a Pilha na mémoria
-    p = malloc(sizeof(Pilha));
-    p->top = 0;
+Pilha *criaP(){ // aloca dinamicamente a Pilha na mémoria
+  Pilha *p;
+  p = (Pilha *)malloc(sizeof(Pilha));
+  if(p != NULL){
+  p->top = 0;
+  }
+  return p;
 }
 
 void destroiP(Pilha *p){ // libera a Pilha da mémoria
@@ -69,18 +73,18 @@ bool pop(Pilha *p, int *x){ /*verifica se a Pilha está vazia, caso não o ponte
 }
 
 int main(){
-    Pilha p1;
+    Pilha *p1;
     int num;
-    criaP(&p1);
-    while(full(&p1) == false){
+    p1 = criaP();
+    while(full(p1) == false){
         setbuf(stdin,NULL);
         scanf("%d", &num);
-        push(&p1, num);
+        push(p1, num);
     }
-    while (empty(&p1) == false){
-        pop(&p1, &num);
-        printf("%i", num);
+    while (empty(p1) == false){
+        pop(p1, &num);
+        printf("Removeu do topo: %i\n", num);
     }
-    destroiP(&p1);
+    destroiP(p1);
     return 0;
 }
