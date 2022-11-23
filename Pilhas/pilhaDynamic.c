@@ -13,6 +13,8 @@ Pilha *criaP(){ // aloca dinamicamente a Pilha na mémoria
   p = (Pilha *)malloc(sizeof(Pilha));
   if(p != NULL){
   p->top = 0;
+  }else{
+    exit(1);
   }
   return p;
 }
