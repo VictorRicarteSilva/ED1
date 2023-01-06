@@ -4,7 +4,8 @@
 #include <stdbool.h>
 
 int main(){
-    Lista *l1 = criarL();
+    Lista *l1;
+    l1 = criarL();
     int i = 0;
     char x;
     while(i <= 5){

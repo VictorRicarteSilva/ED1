@@ -1,6 +1,8 @@
 #ifndef LISTAENCADEADA_H_INCLUDED
 #define LISTAENCADEADA_H_INCLUDED
 
+#include<stdbool.h>
+
 typedef struct node // definição do nó da minha lista
 {
     char info;
@@ -13,8 +15,10 @@ typedef struct lista
 {
     Node *head;
 }Lista;
-
-Node *newNode(); // cria um novo nó
+/// @brief 
+/// cria um novo nó
+/// @return 
+Node *newNode(); 
 void deleteNode(Node *n); // libera o nó da memória
 Lista *criarL(); // cria uma lista
 bool cheia(Lista *L); // verifica se a lista está cheia
