@@ -32,7 +32,7 @@ bool cheia(Lista *L){ /* função feita somente para cumprir com os padrões do 
 }
 
 bool vazia(Lista *L){ // a lista só estará vazia, se a cabeça apontar para NULL
-    if(L->head == NULL){
+    if(L->head->next == NULL){
         return true;
     }
     return false;
