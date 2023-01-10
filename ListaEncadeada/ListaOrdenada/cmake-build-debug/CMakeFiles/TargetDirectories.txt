@@ -1,0 +1,3 @@
+C:/Users/victo/OneDrive/Documentos/GitHub/ED1/ListaEncadeada/ListaOrdenada/cmake-build-debug/CMakeFiles/ListaOrdenada.dir
+C:/Users/victo/OneDrive/Documentos/GitHub/ED1/ListaEncadeada/ListaOrdenada/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/victo/OneDrive/Documentos/GitHub/ED1/ListaEncadeada/ListaOrdenada/cmake-build-debug/CMakeFiles/rebuild_cache.dir

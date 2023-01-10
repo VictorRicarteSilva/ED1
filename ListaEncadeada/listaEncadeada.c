@@ -16,7 +16,7 @@ void deleteNode(Node *n){ // recebe um ponteiro para nó e libera o mesmo, caso 
     }
 }
 
-Lista *criarL(){ // cria um ponteiro para Lista, e o aloca via malloc depois retorna o mesmo, ou    NULL caso não possa alocar
+Lista *criarL(){ // cria um ponteiro para Lista, e o aloca via malloc depois retorna o mesmo, ou NULL caso não possa alocar
     Lista *L;
     // Caso não possa alocar, retorna NULL
     L = malloc(sizeof(Lista));
@@ -25,23 +25,24 @@ Lista *criarL(){ // cria um ponteiro para Lista, e o aloca via malloc depois ret
     }
     return L;
 }
-bool cheia(Lista *L){ /* função feita somente para cumprir com os padrões do TAD, pois nesta 
-                        *versão a Lista nunca ficará cheia. Porém caso queira ser feito poderia ser *limitada a quantidade de elementos por meio desta função*/
+bool cheia(Lista *L){ /* função feita somente para cumprir com os padrões do TAD, pois nesta
+                        *versão a Lista nunca ficará cheia e, aliás, caso queira ser feito poderia ser
+                        * *limitada a quantidade de elementos por meio desta função*/
                        
     return false; // enquanto ouver memória a Lista jamais estará cheia
 }
 
 bool vazia(Lista *L){ // a lista só estará vazia, se a cabeça apontar para NULL
-    if(L->head->next == NULL){
+    if(L->head == NULL){
         return true;
     }
     return false;
 }
 
 int tam(Lista *L){ // percorre uma lista, usando um nó aux, e pra cada "passagem" de nó, incrementa o contador, no momento que o aux for igual a NULL (final da lista), retorna o contador
-    int contador;
+    int contador = 0;
     Node *aux = newNode();
-    aux = L;
+    aux = L->head;
     while(aux != NULL){
         contador++;
         aux = aux->next;
@@ -108,7 +109,7 @@ bool removeInicio(Lista *L, char *x){
     Node *Paux = newNode(); // cria um nó auxiliar
     Paux = L->head;
     L->head = L->head->next; // a cabeça agora aponta para o segundo elemento da lista (novo primeiro elemento)
-    x = Paux->info; // x recebo o info do ultimo elemento
+    x = &Paux->info; // x recebo o info do ultimo elemento
     deleteNode(Paux); // libera o antigo primeiro elemento da lista
     return true;
 }
@@ -129,7 +130,7 @@ bool removeMeio(Lista *L, char *x){
         Paux2 = Paux2->next; // percorre até uma posição antes do meio
     }
     Paux2->next = Paux2->next->next; // faz o elemento anterior ao meio apontar para o elemento posterior ao meio
-    x = Paux1->info; // x recebe o valor do ulitmo elemento
+    x = &Paux1->info; // x recebe o valor do ulitmo elemento
     deleteNode(Paux1); // libera o elemento do meio da memória
     return true;
 }
@@ -148,7 +149,7 @@ bool removeFim(Lista *L, char *x){
             Paux2 = Paux2->next; // percorre até o penultimo elemento da lista
         }
         Paux2->next = NULL; // faz o novo ultimo elemento apontar para o NULL
-        x = Paux1->info; // da a x o valor do antigo ultimo elemento
+        x = &Paux1->info; // da a x o valor do antigo ultimo elemento
         deleteNode(Paux1); // libera o antigo ultimo elemento da memória
         return true;
     }
