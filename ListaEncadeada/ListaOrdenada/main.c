@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ListaOrdenada.h"
+#include "listaOrdenada.h"
 
 int main() {
     Lista *l1;
