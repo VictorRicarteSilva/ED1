@@ -2,6 +2,7 @@
 // Created by victor on 06/01/2023.
 //
 #include <stdbool.h>
+#include <stdlib.h>
 #ifndef LISTAORDENADA_LISTAORDENADA_H
 #define LISTAORDENADA_LISTAORDENADA_H
 
